@@ -26,12 +26,8 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
  "Version": "2012-10-17",
  "Statement": [
    {
-     "Action": [
-       "logs:CreateLogGroup",
-       "logs:CreateLogStream",
-       "logs:PutLogEvents"
-     ],
-     "Resource": "arn:aws:logs:*:*:*",
+     "Action": var.lambda_policy_action
+     "Resource": var.lambda_policy_resource
      "Effect": "Allow"
    }
  ]
