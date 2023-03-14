@@ -27,14 +27,14 @@ variable "function_name" {
   description = "Bucket object.Should be a zip file."
   type        = list (string)
 }
-variable "lambda_policy_action" {
-  description = "Bucket object.Should be a zip file."
-  type        = list (string)
-}
-variable "lambda_policy_resource" {
-  description = "Bucket object.Should be a zip file."
-  type        = string
-}
+# variable "lambda_policy_action" {
+#   description = "Bucket object.Should be a zip file."
+#   type        = list (string)
+# }
+# variable "lambda_policy_resource" {
+#   description = "Bucket object.Should be a zip file."
+#   type        = string
+# }
 variable "role_arn" {
      description = "value"
      type = string
