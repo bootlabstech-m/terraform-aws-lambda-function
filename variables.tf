@@ -39,3 +39,12 @@ variable "role_arn" {
      description = "value"
      type = string
 }
+variable "timeout" {
+  type = number
+  description = "timeout"
+}
+
+variable "memory_size" {
+  type = number
+  description = "memory size for runtime"
+}
