@@ -15,6 +15,9 @@ assume_role_policy = <<EOF
  ]
 }
 EOF
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 resource "aws_iam_policy" "iam_policy_for_lambda" {
  
@@ -37,6 +40,9 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
  ]
 }
 EOF
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
  
 resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
@@ -60,4 +66,7 @@ runtime                        = var.runtime
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 memory_size                    = var.memory_size
 timeout                        = var.timeout 
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
