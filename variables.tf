@@ -23,7 +23,7 @@ variable "handler" {
   description = "value"
   type        = string
 }
-variable "function_name" {
+variable "name" {
   description = "Bucket object.Should be a zip file."
   type        = list (string)
 }

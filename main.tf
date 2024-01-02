@@ -59,7 +59,7 @@ output_path = "${path.module}/python/hello-python.zip"
 resource "aws_lambda_function" "terraform_lambda_func" {
 count                          = var.no_of_functions
 filename                       = "${path.module}/python/hello-python.zip"
-function_name                  = var.function_name[count.index]
+function_name                  = var.name[count.index]
 role                           = aws_iam_role.lambda_role.arn
 handler                        = var.handler
 runtime                        = var.runtime
