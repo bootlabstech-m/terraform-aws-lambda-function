@@ -66,6 +66,12 @@ runtime                        = var.runtime
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 memory_size                    = var.memory_size
 timeout                        = var.timeout 
+description                    = var.description
+layers                         = var.layers
+environment {
+  variables = var.envvariables
+}
+
   lifecycle {
     ignore_changes = [tags]
   }

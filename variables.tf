@@ -48,3 +48,16 @@ variable "memory_size" {
   type = number
   description = "memory size for runtime"
 }
+variable "description" {
+     description = "value"
+     type = string
+}
+variable "layers" {
+  type = list(string)
+  description = "timeout"
+}
+
+variable "envvariables" {
+  type = map(string)
+  description = "memory size for runtime"
+}
