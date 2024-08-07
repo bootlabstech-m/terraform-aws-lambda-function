@@ -51,13 +51,15 @@ variable "memory_size" {
 variable "description" {
      description = "value"
      type = string
-}
-variable "layers" {
-  type = list(string)
-  description = "timeout"
+     default = "lambda"
 }
 
 variable "envvariables" {
   type = map(string)
   description = "memory size for runtime"
+}
+variable "func_details" {
+  type = list(any)
+  description = "memory size for runtime"
+  
 }
