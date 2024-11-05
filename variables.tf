@@ -23,7 +23,7 @@ variable "handler" {
   description = "value"
   type        = string
 }
-variable "name" {
+variable "function_name" {
   description = "Bucket object.Should be a zip file."
   type        = list (string)
 }
@@ -48,18 +48,11 @@ variable "memory_size" {
   type = number
   description = "memory size for runtime"
 }
-variable "description" {
-     description = "value"
-     type = string
-     default = "lambda"
-}
-
 variable "envvariables" {
   type = map(string)
-  description = "memory size for runtime"
+  
 }
-variable "func_details" {
-  type = list(any)
-  description = "memory size for runtime"
+variable "image_uri" {
+  type = string
   
 }

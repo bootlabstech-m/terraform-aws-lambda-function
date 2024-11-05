@@ -57,23 +57,21 @@ output_path = "${path.module}/python/hello-python.zip"
 }
  
 resource "aws_lambda_function" "terraform_lambda_func" {
-  for_each= { for i in var.func_details : i.name => i }
-  function_name               = each.value.name
-  filename                       = "${path.module}/python/hello-python.zip"
-  role                           = aws_iam_role.lambda_role.arn
-  depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
-
-  handler                        = each.value.handler
-  runtime                        = each.value.runtime
-  memory_size                    = each.value.memory_size
-  timeout                        = each.value.timeout 
-  description                    = each.value.description
-  environment {
-  variables = each.value.envvariables
-  }
-   lifecycle {
-    ignore_changes = [tags]
-  }
-
+count                          = var.no_of_functions
+# filename                       = "${path.module}/python/hello-python.zip"
+image_uri                      = var.image_uri
+function_name                  = var.function_name[count.index]
+role                           = aws_iam_role.lambda_role.arn
+handler                        = var.handler
+runtime                        = var.runtime
+depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
+memory_size                    = var.memory_size
+timeout                        = var.timeout 
+environment {
+    variables = var.envvariables
 }
 
+  lifecycle {
+    ignore_changes = [tags]
+  }
+}
