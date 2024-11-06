@@ -70,6 +70,7 @@ role                           = aws_iam_role.lambda_role.arn
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 memory_size                    = var.memory_size
 timeout                        = var.timeout 
+package_type = var.package_type
 environment {
     variables = var.envvariables
 }

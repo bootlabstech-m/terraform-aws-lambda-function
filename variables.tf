@@ -56,3 +56,8 @@ variable "image_uri" {
   type = string
   
 }
+variable "package_type" {
+  type = string
+  default = "Image"
+  
+}
