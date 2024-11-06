@@ -32,7 +32,7 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
      "Action": [
        "logs:CreateLogGroup",
        "logs:CreateLogStream",
-       "logs:PutLogEvents"
+       "logs:PutLogEvents",
        "ecr:GetDownloadUrlForLayer",
        "ecr:BatchGetImage",
        "ecr:DescribeImages"
