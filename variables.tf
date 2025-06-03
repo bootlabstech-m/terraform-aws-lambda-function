@@ -15,14 +15,14 @@ variable "iam_policy_for_lambda_name" {
   description = "value"
   type        = string
 }
-# variable "runtime" {
-#   description = "value"
-#   type        = string
-# }
-# variable "handler" {
-#   description = "value"
-#   type        = string
-# }
+variable "runtime" {
+  description = "value"
+  type        = string
+}
+variable "handler" {
+  description = "value"
+  type        = string
+}
 variable "function_name" {
   description = "Bucket object.Should be a zip file."
   type        = list (string)
@@ -47,17 +47,4 @@ variable "timeout" {
 variable "memory_size" {
   type = number
   description = "memory size for runtime"
-}
-variable "envvariables" {
-  type = map(string)
-  
-}
-variable "image_uri" {
-  type = string
-  
-}
-variable "package_type" {
-  type = string
-  default = "Image"
-  
 }
