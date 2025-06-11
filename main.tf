@@ -67,6 +67,6 @@ depends_on                     = [aws_iam_role_policy_attachment.attach_iam_poli
 memory_size                    = var.memory_size
 timeout                        = var.timeout 
   lifecycle {
-    ignore_changes = [tags, environment]
+    ignore_changes = [tags, environment, vpc_config, layers]
   }
 }
