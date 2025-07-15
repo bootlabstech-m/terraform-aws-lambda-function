@@ -41,7 +41,7 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
 }
 EOF
   lifecycle {
-    ignore_changes = [tags]
+    ignore_changes = [tags, policy]
   }
 }
  
